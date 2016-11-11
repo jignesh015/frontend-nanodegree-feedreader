@@ -32,27 +32,27 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-         it('has URL defined', function() {
+        it('has URL defined', function() {
             var urlLen;
             allFeeds.forEach(function(feed) {
                 urlLen = feed.url.length;
                 expect(feed.url).toBeDefined();
                 expect(urlLen).not.toBe(0);
             });
-         });
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('has name defined', function() {
+        it('has name defined', function() {
             var nameLen;
             allFeeds.forEach(function(feed) {
                 nameLen = feed.name.length;
                 expect(feed.name).toBeDefined();
                 expect(nameLen).not.toBe(0);
             });
-         });
+        });
     });
 
 
@@ -65,9 +65,9 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         it('is hidden by default', function() {
+        it('is hidden by default', function() {
             expect(bodyClass).toBe('menu-hidden');
-         });
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -83,7 +83,7 @@ $(function() {
             $('.menu-icon-link').trigger('click');
             var check2 = $("body").hasClass('menu-hidden');
             expect(check2).toBe(true);
-          });
+        });
 
     });
 
@@ -134,15 +134,11 @@ $(function() {
                     done();
                 });
             }
-         });
+        });
 
         it('changes content', function(done) {
             expect(previousContentArray).not.toEqual(currentContentArray);
-            console.log(previousContentArray);
-            console.log(currentContentArray);
             done();
-            
         });
     });
-
 }());
