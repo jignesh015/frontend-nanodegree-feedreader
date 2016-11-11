@@ -86,9 +86,7 @@ $(function() {
          * a single .entry element within the .feed container.
          */
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         it('are loaded in feed container', function() {
@@ -105,11 +103,14 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          */
         beforeEach(function(done) {
-            previousContent = $('.feed .entry').html();
-            loadFeed(1, function() {
-                currentContent = $('.feed .entry').html();
-                done();
+            loadFeed(0, function() {
+                previousContent = $('.feed .entry').html();
+                loadFeed(1, function() {
+                    currentContent = $('.feed .entry').html();
+                    done();
+                });
             });
+            
         });
 
         it('changes content', function() {
